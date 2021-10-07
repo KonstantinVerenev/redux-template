@@ -23,3 +23,13 @@ export const usersReducer = (state = initialState, action) => {
 export const addUserAction = (payload) => ({ type: ADD_USER, payload })
 export const addManyUsersAction = (payload) => ({ type: ADD_MANY_USERS, payload })
 export const removeUserAction = (payload) => ({ type: REMOVE_USER, payload })
+
+// ---- Thunk creator ----
+export const fetchManuUsersThunk = () => {
+  // ---- async thunk with dispatch action ----
+  return function (dispatch) {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(response => dispatch(addManyUsersAction(response)))
+  }
+}

@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
-import { fetchManuUsersThunk } from './asyncActions/users';
-import { addUserAction, removeUserAction } from './store/usersReducer';
+import { addUserAction, fetchManuUsersThunk, removeUserAction } from './store/usersReducer';
 import { decreaseAction, increaseAction } from './store/valueReducer';
 
 function App() {
